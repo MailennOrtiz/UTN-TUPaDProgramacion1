@@ -1,16 +1,31 @@
-💻 Programación 1
-Tecnicatura Universitaria en Programación
-📍 Universidad Tecnológica Nacional
+<h1 align="left">💻 Programación 1</h1>
 
-✨ Estudiante
-Nombre: Ortiz, Marianela Mailen 
-Comisión: M2025-1 (1PRO1)
+###
 
-📂 Descripción del Repositorio
-Este repositorio almacena todOs los trabajos prácticos realizados durante la cursada de Programación 1.
+<p align="left">Tecnicatura Universitaria en Programación<br>📍 Universidad Tecnológica Nacional</p>
 
-📌 Estructura del repositorio:
+###
 
-Cada trabajo está organizado en carpetas individuales.
-Los archivos de código fuente (.py) incluyen comentarios y estructura adecuada.
-Se busca mantener un código limpio, ordenado y bien documentado.
+<h2 align="left">✨ Estudiante</h2>
+
+###
+
+<p align="left">- Nombre: Ortiz, Marianela Mailen<br>- Comisión: M2025-1 (1PRO1)</p>
+
+###
+
+<h2 align="left">📂 Descripción del Repositorio</h2>
+
+###
+
+<p align="left">Este repositorio almacena todas los trabajos prácticos realizados durante la cursada de Programación 1.</p>
+
+###
+
+<p align="left">📌 Estructura del repositorio:</p>
+
+###
+
+<p align="left">- Cada trabajo está organizado en carpetas individuales.<br>- Los archivos de código fuente (.py) incluyen comentarios y estructura adecuada.<br>- Se busca mantener un código limpio, ordenado y bien documentado</p>
+
+###
