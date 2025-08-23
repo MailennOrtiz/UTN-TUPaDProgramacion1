@@ -93,3 +93,46 @@ elif (media == mediana == moda):
     print("No hay sesgo")
 else:
     print("No se cumple ninguna condición")
+
+#7) Escribir un programa que solicite una frase o palabra al usuario. Si el string ingresado
+#termina con vocal, añadir un signo de exclamación al final e imprimir el string resultante por
+#pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo por
+#pantalla
+
+palabra = input("Ingrese una frase o palabra: ")
+
+ultima_letra = palabra[-1].lower()
+
+if ultima_letra == "a" or ultima_letra == "e" or ultima_letra == "i" or ultima_letra == "o" or ultima_letra == "u":
+    print(f"{palabra}!")
+else:
+    print(palabra)
+
+#8) Escribir un programa que solicite al usuario que ingrese su nombre y el número 1, 2 o 3
+#dependiendo de la opción que desee:
+#1. Si quiere su nombre en mayúsculas. Por ejemplo: PEDRO.
+#2. Si quiere su nombre en minúsculas. Por ejemplo: pedro.
+#3. Si quiere su nombre con la primera letra mayúscula. Por ejemplo: Pedro.
+#El programa debe transformar el nombre ingresado de acuerdo a la opción seleccionada por el
+#usuario e imprimir el resultado por pantalla. Nota: investigue uso de las funciones upper(),
+#lower() y title() de Python para convertir entre mayúsculas y minúsculas.
+
+
+nombre = input("Ingrese su nombre: ")
+
+print("""
+    Si quiere su nombre...
+    --> En mayúsculas - ingrese: 1
+    --> En minúsculas - ingrese: 2
+    --> Con la primera letra mayúscula - ingrese: 3
+    """)
+opcion = int(input("Opción: "))
+
+if opcion == 1:
+    print(nombre.upper())
+elif opcion == 2:
+    print(nombre.lower())
+elif opcion == 3:
+    print(nombre.title())
+else:
+    print("Opción no válida")
