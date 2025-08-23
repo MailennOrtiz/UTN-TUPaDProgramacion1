@@ -136,3 +136,111 @@ elif opcion == 3:
     print(nombre.title())
 else:
     print("Opción no válida")
+
+#9) Escribir un programa que pida al usuario la magnitud de un terremoto, clasifique la
+#magnitud en una de las siguientes categorías según la escala de Richter e imprima el resultado
+#por pantalla:
+#● Menor que 3: "Muy leve" (imperceptible).
+#● Mayor o igual que 3 y menor que 4: "Leve" (ligeramente perceptible).
+#● Mayor o igual que 4 y menor que 5: "Moderado" (sentido por personas, pero
+#generalmente no causa daños).
+#● Mayor o igual que 5 y menor que 6: "Fuerte" (puede causar daños en estructuras
+#débiles).
+#● Mayor o igual que 6 y menor que 7: "Muy Fuerte" (puede causar daños significativos).
+#● Mayor o igual que 7: "Extremo" (puede causar graves daños a gran escala).
+
+print("Para clasificar un terremoto según la escala de Richter...")
+
+magnitud = float(input("Ingrese la magnitud: "))
+
+if magnitud < 0:
+    print("Ingrese una magnitud válida")
+elif magnitud < 3:
+    print("Muy leve (imperceptible)")
+elif (magnitud >= 3) and (magnitud <4):
+    print("Leve (ligeramente perceptible)")
+elif (magnitud >= 4) and (magnitud < 5):
+    print("Moderado (sentido por personas pero generalmente no causa daños)")
+elif (magnitud >= 5) and (magnitud < 6):
+    print("Fuerte (puede causar daños en estructuras débiles)")
+elif (magnitud >= 6) and (magnitud < 7):
+    print("Muy Fuerte (puede causar daños significativos)")
+elif (magnitud >= 7):
+    print("Extremo (puede causar graves daños a gran escala)")
+
+#10) Escribir un programa que pregunte al usuario en cuál hemisferio se encuentra (N/S), qué mes
+#del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla
+#si el usuario se encuentra en otoño, invierno, primavera o verano.
+
+hemisferio = input("Ingrese el hemisferio donde se encuentra (Norte/Sur): ").lower()
+mes = input("Ingrese el mes actual:").lower()
+dia = int(input("Ingrese el día de hoy: "))
+
+if (dia < 1) or (dia > 31):
+    print("Ingrese un día válido (1 al 31)")
+else:
+    #HEMISFERIO NORTE --------------------------------------------------------
+    if hemisferio == "norte": 
+        if (mes == "enero") or (mes == "febrero"): #ENERO / FEBRERO - INVIERNO
+            print("Invierno")
+        elif (mes == "marzo"): #MARZO - INVIERNO / PRIMAVERA
+            if (dia <= 20):
+                print("Invierno")
+            elif (dia > 20):
+                print("Primavera")
+        elif (mes == "abril") or (mes == "mayo"): #ABRIL / MAYO - PRIMAVERA
+            print("Primavera")
+        elif (mes == "junio"): #JUNIO - PRIMAVERA / VERANO
+            if (dia <= 20):
+                print("Primavera")
+            elif (dia > 20):
+                print("Verano")
+        elif (mes == "julio") or (mes == "agosto"): #JULIO / AGOSTO - VERANO
+            print("Verano")
+        elif (mes == "septiembre"): #SEPTIEMBRE - VERANO / OTOÑO
+            if (dia <= 20):
+                print("Verano")
+            elif (dia > 20):
+                print("Otoño")
+        elif (mes == "octubre") or (mes == "noviembre"): #OCTUBRE / NOVIEMBRE - OTOÑO
+            print("Otoño")
+        elif (mes == "diciembre"): #DICIEMBRE - OTOÑO / INVIERNO
+            if (dia <= 20):
+                print("Otoño")
+            elif (dia > 20):
+                print("Invierno")
+        else:
+            print("Ingrese un mes válido")
+    elif hemisferio == "sur": #HEMISFERIO SUR ---------------------------------
+        if (mes == "enero") or (mes == "febrero"): #ENERO / FEBRERO - VERANO
+            print("Verano")
+        elif (mes == "marzo"): #MARZO - VERANO / OTOÑO
+            if (dia <= 20):
+                print("Verano")
+            elif (dia > 20):
+                print("Otoño")
+        elif (mes == "abril") or (mes == "mayo"): #ABRIL / MAYO - OTOÑO
+            print("Otoño")
+        elif (mes == "junio"): #JUNIO - OTOÑO / INVIERNO
+            if (dia <= 20):
+                print("Otoño")
+            elif (dia > 20):
+                print("Invierno")
+        elif (mes == "julio") or (mes == "agosto"): #JULIO / AGOSTO - INVIERNO
+            print("Invierno")
+        elif (mes == "septiembre"): #SEPTIEMBRE - INVIERNO / PRIMAVERA
+            if (dia <= 20):
+                print("Invierno")
+            elif (dia > 20):
+                print("Primavera")
+        elif (mes == "octubre") or (mes == "noviembre"): #OCTUBRE / NOVIEMBRE - PRIMAVERA
+            print("Primavera")
+        elif (mes == "diciembre"): #DICIEMBRE
+            if (dia <= 20):
+                print("Primavera")
+            elif (dia > 20):
+                print("Verano")
+        else:
+            print("Ingrese un mes válido")        
+    else:    
+        print("Ingrese un hemisferio válido")
