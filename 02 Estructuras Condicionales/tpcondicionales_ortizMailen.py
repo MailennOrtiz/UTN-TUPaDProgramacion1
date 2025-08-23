@@ -34,7 +34,7 @@ else:
 #● Niño/a: menor de 12 años.
 #● Adolescente: mayor o igual que 12 años y menor que 18 años.
 #● Adulto/a joven: mayor o igual que 18 años y menor que 30 años.
-#● Adulto/a: mayor o igual que 30 años.
+#● Adulto/a: mayor o igual que 30 años
 
 edad = int(input("Ingrese su edad: "))
 
@@ -48,3 +48,48 @@ elif (edad >= 30):
     print("Adulto/a")
 else:
     print("Ingrese una edad válida")
+
+#5) Escribir un programa que permita introducir contraseñas de entre 8 y 14 caracteres
+#(incluyendo 8 y 14). Si el usuario ingresa una contraseña de longitud adecuada, imprimir por en
+#pantalla el mensaje "Ha ingresado una contraseña correcta"; en caso contrario, imprimir por
+#pantalla "Por favor, ingrese una contraseña de entre 8 y 14 caracteres". Nota: investigue el uso
+#de la función len() en Python para evaluar la cantidad de elementos que tiene un iterable tal
+#como una lista o un string.
+
+contraseña = input("Ingrese una contraseña de entre 8 y 14 caracteres: ")
+
+numero_caracteres = len(contraseña)
+
+if (numero_caracteres >= 8) and (numero_caracteres <= 14):
+    print("Ha ingresado una contraseña correcta")
+else:
+    print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")
+
+#6) Escribir un programa que tome la lista
+#numeros_aleatorios, calcule su moda, su mediana y su media y las compare para determinar si
+#hay sesgo positivo, negativo o no hay sesgo. Imprimir el resultado por pantalla.
+
+import random
+from statistics import mode, median, mean
+
+numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
+
+moda = mode(numeros_aleatorios)
+mediana = median(numeros_aleatorios)
+media = mean(numeros_aleatorios)
+
+print(f"""
+    Lista: {numeros_aleatorios}
+    Moda: {moda}
+    Mediana: {mediana}
+    Media: {media}
+    """)
+
+if (media > mediana) and (mediana > moda):
+    print("Sesgo positivo")
+elif (media < mediana) and (mediana < moda):
+    print("Sesgo negativo")
+elif (media == mediana == moda):
+    print("No hay sesgo")
+else:
+    print("No se cumple ninguna condición")
