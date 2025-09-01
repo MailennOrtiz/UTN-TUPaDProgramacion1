@@ -92,3 +92,48 @@ if numero >= 0:
 else: 
     print("Número no válido! Debe ingresar un número positivo")
 
+# 8) Escribe un programa que permita al usuario ingresar 100 números enteros. Luego, el
+# programa debe indicar cuántos de estos números son pares, cuántos son impares, cuántos son 
+# negativos y cuántos son positivos. (Nota: para probar el programa puedes usar una cantidad 
+# menor, pero debe estar preparado para procesar 100 números con un solo cambio).
+
+cantidadNumeros = 100
+pares = 0
+impares = 0
+positivos = 0
+negativos = 0
+
+for contador in range(1, cantidadNumeros + 1):
+    numero = int(input("Ingrese un número:"))
+
+    if numero % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+
+    if numero >= 0:
+        positivos += 1
+    else:
+        negativos += 1
+
+print(f"""
+    En los numeros ingresados hay...
+    - {pares} pares
+    - {impares} impares
+    - {positivos} positivos
+    - {negativos} negativos 
+    """)
+
+# 9) Elabora un programa que permita al usuario ingresar 100 números enteros y luego calcule la 
+# media de esos valores. (Nota: puedes probar el programa con una cantidad menor, pero debe 
+# poder procesar 100 números cambiando solo un valor)
+
+cantidadNumeros = 5
+sumatoria = 0
+
+for contador in range(1, cantidadNumeros + 1):
+    numero = int(input(f"Ingrese un número {contador}:"))
+
+    sumatoria += numero
+
+print(f"La media de los números ingresados es: {sumatoria / cantidadNumeros}")
