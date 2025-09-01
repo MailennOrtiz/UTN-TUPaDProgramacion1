@@ -1,15 +1,16 @@
-#3) Escribe un programa que sume todos los números enteros comprendidos entre dos valores
-#dados por el usuario, excluyendo esos dos valores.
+#5) Crea un juego en el que el usuario deba adivinar un número aleatorio entre 0 y 9. Al final, el
+# programa debe mostrar cuántos intentos fueron necesarios para acertar el número.
 
-numero1 = int(input("Ingrese el primer número:"))
-numero2 = int(input("Ingrese el segundo número:"))
-sumatoria = 0
-contador = 0
+import random
+numeroAleatorio = random.randint(0, 9)
+print(numeroAleatorio)
+numero = int(input("Adivina el número aleatorio. Ingrese el número que crea que es: "))
 
-numeroMayor = max(numero1, numero2) 
-numeroMenor = min(numero1, numero2)
+intentos = 1
 
-for contador in range(numeroMenor + 1, numeroMayor):
-    sumatoria += contador 
+while numeroAleatorio != numero:
+    numero = int(input("Incorrecto! Intentalo nuevamente: "))
 
-print(f"La suma de los números comprendidos entre {numeroMenor} y {numeroMayor} es: {sumatoria}")
+    intentos += 1
+
+print(f"¡CORRECTO! - Intentos: {intentos}")
