@@ -48,11 +48,7 @@ sumatoria = 0
 
 while numero != CORTE:
 
-    if numero >= 0:
-        sumatoria += numero 
-    else:
-        print("Número no válido, ingrese un número positivo")
-
+    sumatoria += numero 
     numero = int(input(f"Ingrese otro número ({CORTE} - Terminar Suma)"))
 
 print(f"La suma total de los números ingresados es: {sumatoria}")
@@ -137,3 +133,16 @@ for contador in range(1, cantidadNumeros + 1):
     sumatoria += numero
 
 print(f"La media de los números ingresados es: {sumatoria / cantidadNumeros}")
+
+# 10) Escribe un programa que invierta el orden de los dígitos de un número ingresado por el 
+# usuario. Ejemplo: si el usuario ingresa 547, el programa debe mostrar 745.
+
+numero = int(input("Ingrese un número:"))
+numero_invertido = 0 
+
+while numero != 0:
+    digito = numero % 10
+    numero_invertido = numero_invertido * 10 + digito
+    numero //= 10
+
+print(f"El número invertido es: {numero_invertido}")    
