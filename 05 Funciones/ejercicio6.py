@@ -3,7 +3,7 @@
 # número del 1 al 10. Pedir al usuario el número y llamar a la función
 
 def tabla_multiplicar(numero):
-    print(f"Tabla de multiplicar de {numero}")
+    print(f"Tabla de multiplicar del {numero}")
     for valor in range(1, 11):
         print(f"{numero} x {valor} = {numero * valor}")
 

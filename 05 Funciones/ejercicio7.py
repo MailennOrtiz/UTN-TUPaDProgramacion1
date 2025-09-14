@@ -10,7 +10,7 @@ numero2 = int(input("Ingrese el segundo número: "))
 
 resultados = operaciones_basicas(numero1, numero2)
 
-print(f"""Los resultados son
+print(f"""Los resultados son...
     Suma = {resultados[0]}
     Resta = {resultados[1]}
     Multiplicación = {resultados[2]}

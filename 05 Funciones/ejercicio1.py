@@ -3,6 +3,6 @@
 # programa principal.
 
 def imprimir_hola_mundo():
-    return "Hola Mundo!"
+    print("Hola Mundo!")
 
-print(imprimir_hola_mundo)
+imprimir_hola_mundo()

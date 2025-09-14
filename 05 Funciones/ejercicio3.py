@@ -15,3 +15,4 @@ residencia = input("Residencia: ")
 informacion_personal(nombre, apellido, edad, residencia)
 
 
+

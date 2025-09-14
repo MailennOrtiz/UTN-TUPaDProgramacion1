@@ -7,7 +7,6 @@
 def saludar_usuario(nombre):
     return(f"Hola {nombre}!")
 
-
 nombreUsuario = input("Ingrese su nombre:")
 
 saludo = saludar_usuario(nombreUsuario)

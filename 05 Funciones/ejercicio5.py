@@ -9,6 +9,6 @@ segundos = int(input("Ingrese la cantidad de segundos para transformarlo en hora
 
 hora = segundos_a_horas(segundos)
 
-print(f"{segundos} son {hora} hora/s" )
+print(f"{segundos} segundos son {hora} hora/s" )
 
 
