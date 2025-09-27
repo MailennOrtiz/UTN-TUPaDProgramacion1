@@ -16,3 +16,5 @@ buscarNombre = input("Ingrese el nombre del contacto que quiere buscar:")
 
 if buscarNombre in agenda:
     print(f"Su número es: {agenda[buscarNombre]}")
+else:
+    print("No se encontró el contacto")
