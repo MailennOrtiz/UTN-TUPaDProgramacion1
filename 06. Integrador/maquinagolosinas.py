@@ -32,27 +32,26 @@ golosinasPedidas = []
 opcion = 0
 #--------------INICIO MÁQUINA DE GOLOSINAS -----------------
 
-#Se para si la opción es apagar maquina
-
-#Pide el número de legajo del trabajador
-legajo = int(input("Ingrese su número de legajo: "))
-
 #Si el legajo es correcto puede acceder a la máquina
-if legajo in empleados:
-    while opcion != 4: 
-        #Se muestran las opciones y el usuario elige que acción hacer
-        print("MÁQUINA DE GOLOSINAS")
-        print("""
-            Opciones:
-            1. Pedir golosina
-            2. Mostrar golosinas
-            3. Rellenar golosinas
-            4. Apagar maquina
-            """)
 
-        opcion = int(input("Ingrese la opción que desee (1-4): "))
+while opcion != 4: 
+    #Se muestran las opciones y el usuario elige que acción hacer
+    print("MÁQUINA DE GOLOSINAS")
+    print("""
+        Opciones:
+        1. Pedir golosina
+        2. Mostrar golosinas
+        3. Rellenar golosinas
+        4. Apagar maquina
+        """)
 
-        if opcion == 1: #-------------OPCIÓN 1---------------
+    opcion = int(input("Ingrese la opción que desee (1-4): "))
+
+    if opcion == 1: #-------------OPCIÓN 1---------------
+
+        legajo = int(input("Ingrese su número de legajo: "))
+
+        if legajo in empleados:
             #Muestra las opciones
             print ("""
                 CÓDIGO / PRODUCTO 
@@ -112,77 +111,73 @@ if legajo in empleados:
                             verificacionCodigoGolosina = True
                 else: 
                     print("El código no es válido, intente nuevamente")
-        elif opcion == 2:
-            print("Cantidad de golosinas disponibles")
+        else:
+            print("Usted no es un empleado de la empresa")
+    elif opcion == 2:
+        print("Cantidad de golosinas disponibles")
+        for producto in golosinas:
+            print(f"Código: {producto[0]} / Producto: {producto[1]} / Stock: {producto[2]}")
 
-            for producto in golosinas:
-                print(f"Código: {producto[0]} / Producto: {producto[1]} / Stock: {producto[2]}")
+    elif opcion == 3:
+        print("Sección Administrativa - Ingrese las 3 contraseñas correctamente para acceder")
 
-        elif opcion == 3:
-            print("Sección Administrativa - Ingrese las 3 contraseñas correctamente para acceder")
+        intentosCorrectos = 0
 
-            intentosCorrectos = 0
+        for intento in range (1,4):
+            contrasena = input(f"Ingrese la contraseña {intento}: ")
 
-            for intento in range (1,4):
-                contrasena = input(f"Ingrese la contraseña {intento}: ")
+            if contrasena != clavesTecnico[intento-1]:
+                print("Contraseña incorrecta.")
+                intentosCorrectos = 0
+                break
 
-                if contrasena != clavesTecnico[intento-1]:
-                    print("Contraseña incorrecta.")
-                    intentosCorrectos = 0
-                    break
-
-                intentosCorrectos +=1
+            intentosCorrectos +=1
                 
-            if intentosCorrectos == 3:
-                print("Acceso Autorizado")
+        if intentosCorrectos == 3:
+            print("Acceso Autorizado")
                 
-                codigoCorrecto = False
+            codigoCorrecto = False
                     
+            while codigoCorrecto == False:
+                codigoRecargar = int(input("Ingrese el código del producto que quiere recargar (1-12): "))
 
-                while codigoCorrecto == False:
-                    codigoRecargar = int(input("Ingrese el código del producto que quiere recargar (1-12): "))
-                        
-                    if 1 <= codigoRecargar <= 12:
-                        codigoCorrecto = True
-                    else:
-                            print("El dato ingresado no es válido.Intente nuevamente.")
+                if 1 <= codigoRecargar <= 12:
+                    codigoCorrecto = True
+                else:
+                    print("El dato ingresado no es válido.Intente nuevamente.")
 
-                print(f"Stock Actual de {golosinas[codigoRecargar-1][1]}: {golosinas[codigoRecargar-1][2]}")
+            print(f"Stock Actual de {golosinas[codigoRecargar-1][1]}: {golosinas[codigoRecargar-1][2]}")
 
-                cantidadValida = False
+            cantidadValida = False
 
-                while cantidadValida == False:
-                    cantidadRecargar = int(input("Ingrese la cantidad a recargar: "))
+            while cantidadValida == False:
+                cantidadRecargar = int(input("Ingrese la cantidad a recargar: "))
 
-                    if cantidadRecargar > 0:
-                        cantidadValida = True
+                if cantidadRecargar > 0:
+                    cantidadValida = True
                 
-                        golosinas[codigoRecargar-1][2] += cantidadRecargar
+                    golosinas[codigoRecargar-1][2] += cantidadRecargar
                         
-                        print(f"Stock actualizado. Cantidad actual: {golosinas[codigoRecargar-1][2]} unidades de {golosinas[codigoRecargar-1][1]}")
+                    print(f"Stock actualizado. Cantidad actual: {golosinas[codigoRecargar-1][2]} unidades de {golosinas[codigoRecargar-1][1]}")
 
-                        print("Recarga completada. Volviendo al menú principal.")
-                    else:
-                        print("La cantidad debe ser mayor a 0.")
-            else:
-                print("No tiene permiso para ejecutar la función de recarga")
-                continue
+                    print("Recarga completada. Volviendo al menú principal.")
+                else:
+                    print("La cantidad debe ser mayor a 0.")
+        else:
+            print("No tiene permiso para ejecutar la función de recarga")
+            continue
 
-        elif opcion == 4:
-            print("Apagando la máquina de golosinas...")
-            print("Listado de golosinas pedidas durante la ejecución:")
+    elif opcion == 4:
+        print("Apagando la máquina de golosinas...")
+        print("Listado de golosinas pedidas durante la ejecución:")
 
-            total_pedidas = 0
-            for pedido in golosinasPedidas:
-                print(f"Código: {pedido[0]} / Producto: {pedido[1]} / Cantidad pedida: {pedido[2]}")
-                total_pedidas += pedido[2]  # se suma la cantidad de cada producto pedido
+        total_pedidas = 0
+        for pedido in golosinasPedidas:
+            print(f"Código: {pedido[0]} / Producto: {pedido[1]} / Cantidad pedida: {pedido[2]}")
+            total_pedidas += pedido[2]  # se suma la cantidad de cada producto pedido
 
-            print(f"Total de golosinas pedidas: {total_pedidas}")
-
+        print(f"Total de golosinas pedidas: {total_pedidas}")
 
 #Si el número de legajo es incorrecto no va a dejar al usuario utilizar la máquina
-else:
-    print("Usted no es un empleado de la empresa")
-
 
 print("Gracias por utilizar nuestros servicios!")
