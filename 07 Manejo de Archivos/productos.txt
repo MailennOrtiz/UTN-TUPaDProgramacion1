@@ -1,0 +1,5 @@
+Manzana,300.0,20
+Naranja,250.0,35
+Pera,200.0,10
+Banana,300.0,2
+Cereza,800.0,4
